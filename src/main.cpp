@@ -23,9 +23,6 @@ using namespace message_filters;
 #define default_depth_topic "/camera/depth/image_raw"
 #define default_timer_time 3
 
-bool flag_state = false;
-double timer_time;
-
 string img_path = ros::package::getPath("rgbd_saver") + "/img/";
 string rgb_topic;
 string depth_topic;
@@ -50,7 +47,6 @@ void RGBDcallback(const sensor_msgs::ImageConstPtr& msg_rgb , const sensor_msgs:
   time_t now = time(0);
   string now_str = to_string(now);
   rgb_frame = rgb_ptr->image;
-
   dpt_frame = dpt_ptr->image;
   dpt_frame.convertTo(dpt_frame, CV_16UC1);
 
