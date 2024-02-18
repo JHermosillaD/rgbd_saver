@@ -36,9 +36,9 @@ include_directories(
 ## Declare a C++ executable
 ## With catkin_make all packages are built within a single CMake context
 ## The recommended prefix ensures that target names across packages don't collide
-add_executable(rgbd_saver_node src/main.cpp)
+add_executable(take_photos src/main.cpp)
 
 ## Specify libraries to link a library or executable target against
-target_link_libraries(rgbd_saver_node
+target_link_libraries(take_photos
   ${catkin_LIBRARIES} ${LIBS}
 )
